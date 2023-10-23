@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/add">Cadastrar Clientes</a></li>
+                <li>Cadastrar Funcionario</li>
+                <li>Cadastrar Produto</li>
+                <li>Cadastrar Estoque</li>
+                <li>Cadastrar Tarefas</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <form action="/add" method="post">
+            <h2>Cadastro de Clientes</h2>
+            <label for="Nome">Nome: </label>
+            <input placeholder="Digite seu nome">
+            <label for="CPF">CPF: </label>
+            <input placeholder="Digite seu cpf">
+            <label for="E-mail">E-Mail: </label>
+            <input placeholder="Digite seu e-mail">
+            <button type="submit">Salvar</button>
+            <button type="reset">Limpar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/add">Cadastrar Clientes</a></li>
+                <li>Cadastrar Funcionario</li>
+                <li>Cadastrar Produto</li>
+                <li>Cadastrar Estoque</li>
+                <li>Cadastrar Tarefas</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="info">
+        <h1>Lista de Clientes</h1>
+        <table>
+            <thead>
+                <tr>
+                    
+                    <td>Nome</td>
+                    <td>CPF</td>
+                    <td>E-mail</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in lista_clientes %}
+                <tr>
+                    <td>{{cliente[0]}}</td>
+                    <td>{{cliente[1]}}</td>
+                    <td>
+                        <a href="/edit/{{cliente.id}}">Editar</a>
+                        <a href="/delete/{{cliente.id}}">Excluir</a>
+                    </td>
+                    <hr>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
