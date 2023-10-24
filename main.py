@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,redirect,url_for
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder='templates')
@@ -19,18 +19,22 @@ class Clientes(db.Model):
         self.cpf_cliente = cpf
         self.email_cliente = email
 
-@app.route("/index")
-def Database():
-    lista_clientes = Clientes.query.all()
-    return render_template('index.html', lista_clientes=lista_clientes)
+@app.route("/")
+def database():
+    clientes = Clientes.query.all()
+    return render_template('index.html', clientes=clientes)
 
 @app.route("/add", methods=["GET", "POST"])
-def Add():
+def add():
     if request.method == "POST":
-        clientes = Clientes(request.form['nome'],request.form['cpf'], request.form['email'])
+        nome = request.form['nome']
+        cpf = request.form['cpf']
+        email = request.form['email']
+        clientes = Clientes(nome, cpf, email)
         db.session.add(clientes)
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('database'))
     return render_template('add.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
