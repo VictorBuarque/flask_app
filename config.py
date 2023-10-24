@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+database = SQLAlchemy()
 
 class Config(object):
     DEBUG = False
@@ -9,10 +9,10 @@ class Config(object):
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:@localhost/crm_victor'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:@localhost/crm_victor'
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:@localhost/crm_victor'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:@localhost/crm_victor'
 
 app_config = {
     'development': DevelopmentConfig,
