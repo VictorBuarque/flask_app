@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+
+        <div class="container">
+            <h1>Clientes</h1>
+            {% for cliente in lista_clientes %}
+                <strong>{{ cliente }}</strong>
+                    {%for i in cliente %}
+            <p><strong>{{i}}</strong></p>
+                    {% endfor %}
+                <hr>
+            {% endfor %}
+        </div>
+        <div>
+            <h2>
+                Cadastro de Clientes
+            </h2>
+                {{form_clientes}}
+                <form method="POST" action="">
+                    {{form_clientes.csfr_token}}
+                    <fieldset>
+                        <div>
+                             <p>{{form_clientes.id_cliente.label}}{{form_clientes.id_cliente}}</p>
+                        </div>
+                        <div>
+                            <p>{{form_clientes.nome_cliente.label}}{{form_clientes.nome_cliente}}</p>
+                        </div>
+                        <div>
+                            <p>{{form_clientes.telefone_cliente.label}}{{form_clientes.telefone_cliente}}</p>
+                        </div>
+                        <div>
+                          <p>{{form_clientes.email_cliente.label}}{{form_clientes.email_cliente}}</p>
+                        </div>
+                        <div>
+                            <p>{{form_clientes.senha_cliente.label}}{{form_clientes.senha_cliente}}</p>
+                        </div>
+                        <div>
+                            <p>{{form_clientes.confirma_senha.label}}{{form_clientes.confirma_senha}}</p>
+                        </div>
+                        <p>{{form_clientes.botao_cadastracliente}}</p>
+                    </fieldset>
+                </form>
+        </div>
+
+{% endblock %}
