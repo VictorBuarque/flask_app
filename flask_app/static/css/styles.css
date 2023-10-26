@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000;
+    color: black;
+}
+
+form {
+    color: #000000;
+}
+
+header, footer {
+    margin: auto;
+    height: 50px;
+    padding: 5px;
+    color: #FFFFFF;
+}
+footer{
+    text-align: center;
+}
+
+nav ul, nav a {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+nav ul:hover, nav a:hover{
+    color: aqua;
+}
+
+nav li {
+    padding: 5px;
+    font-size: 18px;
+}
+
+
+h1 {
+    padding: 0.5rem;
+    
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 1px solid #c3c3ce;
+    background-color: #FFFFFF;
+}
+
+.container input {
+    margin: 1rem 0;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+}
+
+.container button {
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    width: 80%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 1rem auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    margin: 3rem auto;
+    border: 1px solid #000000;
+    border-radius:20px ;
+    padding: 1rem;
+    background-color: rgba(205, 205, 205, 0.842) ;
+}
+
+.info h2{
+    text-align: center;
+}
+.info table {
+    padding: 5px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info th, .info td {
+    padding: 0.5rem;
+    border: 1px solid #000000;
+    text-align: center;
+    cursor: pointer;
+}
+.info a{
+    text-decoration: none;
+    color: #000000;
+    padding: 2px;
+}
+.info a:hover{
+    color: aqua;
+}
+
+.info th {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.info tbody tr:nth-child(even) {
+    background-color: #ECECEC;
+    color: #000000;
+}
+
+.info tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+hr {
+    border: 1px solid #000000;
+}
