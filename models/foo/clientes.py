@@ -1,4 +1,3 @@
-from flask_sqlalchemy import SQLAlchemy
 from config import database
 class Clientes(database.Model):
     __tablename__ = 'clientes'  # Correção do nome da tabela

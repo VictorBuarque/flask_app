@@ -14,25 +14,30 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/add">Cadastrar Clientes</a></li>
-                <li><a href="/edit">Editar Clientes</a></li>
-                <li>Cadastrar Produto</li>
-                <li>Cadastrar Estoque</li>
-                <li>Cadastrar Tarefas</li>
+                <li><a href="#">Cadastrar Funcionário</a></li>
+                <li><a href="#">Cadastrar Produto</a></li>
+                <li><a href="#">Cadastrar Estoque</a></li>
+                <li><a href="#">Cadastrar Tarefas</a></li>
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <form method="POST" action="/edit">
-            <h2>Editar {cliente.id}</h2>
+    <div class="container info">
+        
+        <form  method="POST" action="/edit/{{cliente.id_cliente}}">
+            <h2>Editar </h2>
+            <br>
             <label for="nome">Nome: </label>
-            <input type="text" placeholder="Digite seu nome" id="nome" name="nome">
+            <input type="text" id="nome" name="nome" value="{{cliente.nome_cliente}}">
             <label for="cpf">CPF: </label>
-            <input type="text" placeholder="Digite seu cpf" id="cpf" name="cpf">
+            <input type="text" id="cpf" name="cpf" value="{{cliente.cpf_cliente}}">
             <label for="email">E-Mail: </label>
-            <input type="text" placeholder="Digite seu e-mail" id="email" name="email">
+            <input type="text" id="email" name="email" value="{{cliente.email_cliente}}">
             <button type="submit" value="Submit">Salvar</button>
             <button type="reset">Limpar</button>
         </form>
     </div>
+    <footer>
+        <h2>Desenvolvido por Victor Gabriel</h2>
+    </footer>
 </body>
 </html>
