@@ -1,4 +1,5 @@
 from config import database
+
 class Clientes(database.Model):
     __tablename__ = 'clientes'  # Correção do nome da tabela
     id_cliente = database.Column(database.Integer, primary_key=True, autoincrement=True)

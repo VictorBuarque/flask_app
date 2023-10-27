@@ -14,8 +14,8 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="/add">Cadastrar Clientes</a></li>
-                <li><a href="#">Cadastrar Funcionário</a></li>
+                <li><a href="/add_cliente">Cadastrar Clientes</a></li>
+                <li><a href="/add_funcionario">Cadastrar Funcionário</a></li>
                 <li><a href="#">Cadastrar Produto</a></li>
                 <li><a href="#">Cadastrar Estoque</a></li>
                 <li><a href="#">Cadastrar Tarefas</a></li>
@@ -40,8 +40,35 @@
                     <td>{{ cliente.cpf_cliente }}</td>
                     <td>{{ cliente.email_cliente }}</td>
                     <td>
-                        <a href="/edit/{{ cliente.id_cliente }}">Editar</a>
-                        <a href="/delete/{{ cliente.id_cliente }}">Excluir</a>
+                        <a href="/edit_cliente/{{ cliente.id_cliente }}">Editar</a>
+                        <a href="/delete_cliente/{{ cliente.id_cliente }}">Excluir</a>
+                    </td>
+                </tr>
+                <hr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container info">
+        <h1>Lista de Funcionarios</h1>
+        <table >
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>CPF</td>
+                    <td>E-mail</td>
+                    <td>Ações</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for funcionario in funcionarios %}
+                <tr>
+                    <td>{{ funcionario.nome_funcionario }}</td>
+                    <td>{{ funcionario.cpf_funcionario }}</td>
+                    <td>{{ funcionario.email_funcionario }}</td>
+                    <td>
+                        <a href="/edit_funcionario/{{ funcionario.id_funcionario }}">Editar</a>
+                        <a href="/delete_funcionario/{{ funcionario.id_funcionario }}">Excluir</a>
                     </td>
                 </tr>
                 <hr>
